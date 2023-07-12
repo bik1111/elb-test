@@ -1,4 +1,4 @@
-name: Deploy to EB
+name: Deploy to EB!
 
 # main branch에 push 되면 실행
 on:
