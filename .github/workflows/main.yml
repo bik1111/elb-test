@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: CI Pipeline
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -38,9 +38,6 @@ jobs:
 
       # npm install for ci
       - run: npm install
-
-      # Build
-      - run: npm run build
 
   deploy:
     name: BeanStalk Deploy
@@ -76,10 +73,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-
-      # Build
-      - name: Run build
-        run: npm run build
 
       # Make upload zip file
       - name: Generate deployment package
