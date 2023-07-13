@@ -88,3 +88,4 @@ jobs:
           environment_name: Testserver-env
           region: ${{ secrets.AWS_REGION }}
           version_label: ${{github.SHA}}
+          deployment_package: deploy.zip
