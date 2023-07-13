@@ -1,4 +1,4 @@
-name: Deploy to EB!
+name: Deploy to EB !!
 
 # main branch에 push 되면 실행
 on:
@@ -11,13 +11,13 @@ jobs:
     name: CI Pipeline
     runs-on: ubuntu-18.04
     strategy:
-    # Node version은 12 버전을 이용한다.
+      # Node version은 12 버전을 이용한다.
       matrix:
-        node-version: ['12.x']
-	
+        node-version: ["14.x"]
+
     steps:
       - uses: actions/checkout@v2
-	
+
       # Initialize Node.js
       - name: Install Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -36,12 +36,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ['12.x']
-	# 위의 buildAndTest가 실행되고 진행된다.
+        node-version: ["14.x"]
+    # 위의 buildAndTest가 실행되고 진행된다.
     needs: buildAndTest
     steps:
       - uses: actions/checkout@v2
-	  # env 파일을 이용할 일이 보통 많은데,
+      # env 파일을 이용할 일이 보통 많은데,
       # Github Secrets를 이용하여 env 파일을 만들고 추가한다.
       # 참고로 ElasticBeanstalk에 Node 관련을 배포할 때는,
       # 8081 포트를 열어줘야 한다!!
