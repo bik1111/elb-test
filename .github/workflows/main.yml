@@ -23,7 +23,7 @@ jobs:
       # Download AWS CLI 2
       - name: Install AWS CLI 2
         run: |
-          curl -O "https://awscli.amazonaws.com/awscli-exe-linux-arm64.zip"
+          curl -O "https://awscli.amazonaws.com/awscli-exe-linux-arm64.zip" "awscliv2.zip"
           unzip awscliv2.zip
           which aws
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
@@ -68,7 +68,7 @@ jobs:
       # Download AWS CLI 2
       - name: Install AWS CLI 2
         run: |
-          curl -O "https://awscli.amazonaws.com/awscli-exe-linux-arm64.zip"
+          curl -O "https://awscli.amazonaws.com/awscli-exe-linux-arm64.zip" "awscliv2.zip"
           unzip awscliv2.zip
           which aws
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
